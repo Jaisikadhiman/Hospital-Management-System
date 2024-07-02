@@ -1,0 +1,31 @@
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 300px;
+    
+  }
+.left{
+margin-top: 80px;
+
+}
+
+.left h1{
+    font-size: 50px;
+    font-weight: 1000;
+    text-shadow: 2px 2px 5px rgb(83, 181, 238);
+    margin-left: 50px;
+}
+.right{
+    margin-top: 80px;
+    margin-right: 80px;
+}
+p{
+    width: 60%;
+    font-size: 18px;
+    display: flex;
+   margin-left: 50px;
+    text-align: start;
+}

@@ -1,0 +1,46 @@
+.message{
+width: 95%;
+
+height: 550px;
+margin-left: 2.5%;
+}
+form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.field{
+    margin:22px;
+    height: 50px;
+    width: 500px;
+    border-radius: 15px;
+    border: 3px solid  rgb(41, 91, 121);;
+    box-shadow: 2px 2px  5px rgb(158, 204, 231);
+}
+.textarea{
+    width: 1050px;
+    height: 150px;
+    border-radius: 15px;
+    border: 3px solid  rgb(41, 91, 121);;
+    box-shadow: 2px 2px  5px rgb(158, 204, 231);
+    margin-top: 10px;
+}
+.btn{
+margin-left: 50px;
+margin-top: 40px;
+height: 40px;
+width: 100px;
+border-radius: 10px;
+background-color: rgb(48, 127, 173);
+color: beige;
+font-size: 20px;
+box-shadow: 2px 2px  3px rgb(158, 204, 231);
+cursor: pointer;
+}
+h1{
+    font-size: 50px;
+    font-weight: 1000;
+    text-shadow: 2px 2px 5px rgb(83, 181, 238);
+    margin-left: 400px;
+}
