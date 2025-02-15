@@ -8,7 +8,7 @@ import messageRouter from "./Router/messageRouter.js"
 import userRoute from "./Router/userRouter.js"
 import { errorMiddleware } from "./Middleware/errorMiddleware.js";
 import appointmentRouter from "./Router/appointmentRouter.js"
-
+import doctorRoutes from "./Router/doctorRoutes.js"
 config({path:"./config/config.env"})
 
 const app=express();
@@ -27,6 +27,7 @@ app.use(fileUpload({
 app.use("/api/v1/message",messageRouter);
 app.use("/api/v1/user",userRoute);
 app.use("/api/v1/appointment",appointmentRouter)
+app.use("/api/doctors", doctorRoutes);
 dbConnection();
 app.use(errorMiddleware);
 export default app;
