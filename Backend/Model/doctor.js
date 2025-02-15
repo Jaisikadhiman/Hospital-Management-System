@@ -1,6 +1,10 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-const doctorSchema = mongoose.Schema({
+const doctorSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
@@ -28,4 +32,6 @@ const doctorSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model("Doctor", doctorSchema);
+// ✅ Correct: Use `export default` instead of `module.exports`
+const Doctor = mongoose.model("Doctor", doctorSchema);
+export default Doctor;

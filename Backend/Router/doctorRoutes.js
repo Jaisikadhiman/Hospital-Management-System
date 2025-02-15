@@ -1,13 +1,16 @@
-const express = require("express");
-const { authenticateUser, authorizeRoles } = require("../middlewares/authMiddleware");
-const Doctor = require("../models/Doctor");
+
+import express from "express"; // ✅ Use import instead of require
+import { authenticateUser, authorizeRoles } from "../Middleware/auth.js"; // ✅ Add .js extension
+import Doctor from "../Model/doctor.js";
 const router = express.Router();
 
 // Add Doctor (Only Admin)
 router.post("/add", authenticateUser, authorizeRoles("Admin"), async (req, res) => {
     try {
-        const { userId, specialization, experience, availability, fees } = req.body;
-        const newDoctor = new Doctor({ userId, specialization, experience, availability, fees });
+        console.log("hiiiiiiiiiiiiiiiiiiii")
+        const { userId, name, specialization, experience, availability, fees } = req.body;
+        console.log("doctor:::", req.body)
+        const newDoctor = new Doctor({ userId, name, specialization, experience, availability, fees });
         await newDoctor.save();
         res.status(201).json({ message: "Doctor added successfully", doctor: newDoctor });
     } catch (error) {
@@ -44,5 +47,4 @@ router.delete("/delete/:id", authenticateUser, authorizeRoles("Admin"), async (r
         res.status(500).json({ message: error.message });
     }
 });
-
-module.exports = router;
+export default router;
